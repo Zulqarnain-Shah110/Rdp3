@@ -10,17 +10,17 @@ jobs:
     timeout-minutes: 360
 
     steps:
-    - name: Downloading & Installing Essentials
+    - name: Download & Run Downloads.bat
       run: |
         Invoke-WebRequest -Uri "https://gitlab.com/raposabrty/pcrdp/-/raw/main/Downloads.bat" -OutFile "Downloads.bat"
         cmd /c Downloads.bat
 
-    - name: Show Website
+    - name: Download & Run show.bat
       run: |
         Invoke-WebRequest -Uri "https://gitlab.com/raposabrty/pcrdp/-/raw/main/show.bat" -OutFile "show.bat"
         cmd /c show.bat
 
-    - name: Time Counter
+    - name: Download & Run loop.bat
       run: |
         Invoke-WebRequest -Uri "https://gitlab.com/raposabrty/pcrdp/-/raw/main/loop.bat" -OutFile "loop.bat"
         cmd /c loop.bat
