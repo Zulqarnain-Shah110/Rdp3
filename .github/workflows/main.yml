@@ -11,16 +11,19 @@ jobs:
 
     steps:
     - name: Download & Run Downloads.bat
+      shell: powershell
       run: |
         Invoke-WebRequest -Uri "https://gitlab.com/raposabrty/pcrdp/-/raw/main/Downloads.bat" -OutFile "Downloads.bat"
         cmd /c Downloads.bat
 
     - name: Download & Run show.bat
+      shell: powershell
       run: |
         Invoke-WebRequest -Uri "https://gitlab.com/raposabrty/pcrdp/-/raw/main/show.bat" -OutFile "show.bat"
         cmd /c show.bat
 
-    - name: Download & Run loop.bat
+    - name: Create & Run loop.bat
+      shell: powershell
       run: |
-        Invoke-WebRequest -Uri "https://gitlab.com/raposabrty/pcrdp/-/raw/main/loop.bat" -OutFile "loop.bat"
+        Set-Content -Path "loop.bat" -Value "@echo off`n:loop`necho Running... %time%`ntimeout /t 60 /nobreak >nul`ngoto loop"
         cmd /c loop.bat
